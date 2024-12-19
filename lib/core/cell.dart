@@ -878,7 +878,9 @@ class SwipeActionCellState extends State<SwipeActionCell>
                   width = constraints.maxWidth;
                   // Action buttons
                   final bool shouldHideActionButtons =
-                      currentOffset.dx == 0.0 || editController.isAnimating || editing;
+                      currentOffset.dx == 0.0 ||
+                          editController.isAnimating ||
+                          editing;
                   final Widget trailing = shouldHideActionButtons
                       ? const SizedBox()
                       : _buildTrailingActionButtons();
@@ -1050,6 +1052,8 @@ class SwipeAction {
   /// 标题
   final String? title;
 
+  final EdgeInsets? margin;
+
   /// 背景左上(右上）和左下（左上）的圆角
   final double backgroundRadius;
 
@@ -1076,6 +1080,7 @@ class SwipeAction {
   const SwipeAction({
     required this.onTap,
     this.title,
+    this.margin,
     this.style = const TextStyle(fontSize: 18, color: Colors.white),
     this.color = Colors.red,
     this.icon,

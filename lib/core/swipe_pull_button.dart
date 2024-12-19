@@ -283,6 +283,8 @@ class _SwipePullButtonState extends State<SwipePullButton>
             alignment: trailing ? Alignment.centerLeft : Alignment.centerRight,
             child: Container(
                 alignment: Alignment.center,
+                margin: action.margin,
+                decoration: BoxDecoration(),
                 width: shouldShowNestedActionInfo
                     ? offsetX.abs()
                     : action.widthSpace,
